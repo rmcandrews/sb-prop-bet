@@ -243,34 +243,28 @@ const Leaderboard = () => {
             }`}</div>
             {possibleTrackedEntries.map((possibleEntry, i) => {
               const { name, email } = possibleEntry;
-              if (i === 0 || i === 33) {
-                return (
-                  <div
-                    key={email}
-                    className={styles.item}
-                    style={{ backgroundColor: "#f3f3f7", cursor: "pointer" }}
-                    role="button"
-                    onClick={() => {
-                      userPreferences
-                        .query({ prop: "trackedEntry" })
-                        .update(possibleEntry);
-                      setTrackedEntry(possibleEntry);
-                      setIsTrackModalOpen(false);
-                    }}
-                  >
-                    <div>
-                      <Avatar name={name} email={email} round size="40" />
-                    </div>
-                    <div
-                      className={styles.itemName}
-                      style={{ margin: "0 1rem" }}
-                    >
-                      {name}
-                    </div>
+              return (
+                <div
+                  key={email}
+                  className={styles.item}
+                  style={{ backgroundColor: "#f3f3f7", cursor: "pointer" }}
+                  role="button"
+                  onClick={() => {
+                    userPreferences
+                      .query({ prop: "trackedEntry" })
+                      .update(possibleEntry);
+                    setTrackedEntry(possibleEntry);
+                    setIsTrackModalOpen(false);
+                  }}
+                >
+                  <div>
+                    <Avatar name={name} email={email} round size="40" />
                   </div>
-                );
-              }
-              return undefined;
+                  <div className={styles.itemName} style={{ margin: "0 1rem" }}>
+                    {name}
+                  </div>
+                </div>
+              );
             })}
           </div>
         )}
