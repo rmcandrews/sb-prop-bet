@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sb-prop-bet/static/css/main.96937a8a.chunk.css",
-    "main.js": "/sb-prop-bet/static/js/main.be8268d7.chunk.js",
-    "main.js.map": "/sb-prop-bet/static/js/main.be8268d7.chunk.js.map",
+    "main.js": "/sb-prop-bet/static/js/main.cbf68d60.chunk.js",
+    "main.js.map": "/sb-prop-bet/static/js/main.cbf68d60.chunk.js.map",
     "runtime-main.js": "/sb-prop-bet/static/js/runtime-main.a8a710f7.js",
     "runtime-main.js.map": "/sb-prop-bet/static/js/runtime-main.a8a710f7.js.map",
     "static/css/2.b6630a1a.chunk.css": "/sb-prop-bet/static/css/2.b6630a1a.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.b6630a1a.chunk.css",
     "static/js/2.7fca930e.chunk.js",
     "static/css/main.96937a8a.chunk.css",
-    "static/js/main.be8268d7.chunk.js"
+    "static/js/main.cbf68d60.chunk.js"
   ]
 }
