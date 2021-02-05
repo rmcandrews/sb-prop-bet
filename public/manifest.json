@@ -1,0 +1,15 @@
+{
+  "short_name": "Prop Bet Pool",
+  "name": "Super Bowl Prop Bet Pool",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6d72c3",
+  "background_color": "#ffffff"
+}

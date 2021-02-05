@@ -1,0 +1,17 @@
+html {
+  background-color: #f3f3f7;
+}
+
+body {
+  margin: 0;
+  color: #292f36;
+  background-color: #f3f3f7;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ReactModal__Overlay {
+  z-index: 3;
+}

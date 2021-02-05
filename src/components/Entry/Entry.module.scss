@@ -1,0 +1,31 @@
+.entryPage {
+  max-width: 500px;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.avatar > div > div > span > span {
+  font-size: 2rem;
+}
+
+.name {
+  margin-top: 0.5rem;
+}
+
+.questionAndAnswer {
+  text-align: left;
+  background-color: white;
+  margin: 0.75rem 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+}
+
+.question {
+  font-weight: 700;
+}
+
+.answer {
+  margin-top: 0.25rem;
+}
