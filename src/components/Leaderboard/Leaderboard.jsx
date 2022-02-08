@@ -30,7 +30,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const initialize = async () => {
       const superBowl = await googleSheetsService.getSuperBowl({
-        year: "2021",
+        year: "2022",
       });
       superBowl.entries.forEach((entry) => {
         let points = 0;
@@ -152,14 +152,8 @@ const Leaderboard = () => {
       <h2>LEADERBOARD</h2>
       <div className={styles.container}>
         {superBowl.entries.map((entry) => {
-          const {
-            name,
-            email,
-            points,
-            place,
-            tiebreaker,
-            isEliminated,
-          } = entry;
+          const { name, email, points, place, tiebreaker, isEliminated } =
+            entry;
           let style = { cursor: superBowl.hasStarted ? "pointer" : "" };
           if (
             trackedEntry &&
