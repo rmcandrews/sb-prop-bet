@@ -78,7 +78,6 @@ const Leaderboard = () => {
             }
           }
         }
-        console.log(possibleRemainingPoints);
         entry.isEliminated =
           leader.points - entry.points > possibleRemainingPoints;
       });
