@@ -35,11 +35,14 @@ const Leaderboard = () => {
       superBowl.entries.forEach((entry) => {
         let points = 0;
         for (const [question, answer] of Object.entries(superBowl.answers)) {
-          if (answer && entry.answers[question] === answer) points++;
+          if (answer.answer && entry.answers[question] === answer.answer)
+            points += answer.value;
         }
         entry.points = points;
         entry.tiebreakerDifference = Math.abs(
           entry.tiebreaker - superBowl.answers["Tiebreaker"]
+            ? superBowl.answers["Tiebreaker"].answer
+            : 0
         );
       });
       superBowl.entries.sort((a, b) => {
@@ -63,7 +66,7 @@ const Leaderboard = () => {
       const leader = superBowl.entries[0];
       let questionsRemaining = 0;
       Object.values(superBowl.answers).forEach((answer) => {
-        if (!answer) questionsRemaining++;
+        if (!answer.answer) questionsRemaining++;
       });
       superBowl.entries.forEach((entry) => {
         entry.isEliminated = leader.points - entry.points > questionsRemaining;

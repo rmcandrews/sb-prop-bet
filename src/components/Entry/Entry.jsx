@@ -23,20 +23,37 @@ const Entry = () => {
       <h2>Score: {points}</h2>
       {Object.keys(answers).map((question) => {
         const style = {};
-        if (correctAnswers[question]) {
-          style.backgroundColor =
-            correctAnswers[question] === answers[question]
-              ? "#b1dab1"
-              : "#f7a8a8";
+        let isCorrect = false;
+        let isSettled = false;
+        if (correctAnswers[question].answer) {
+          isSettled = true;
+          if (correctAnswers[question].answer === "PUSH") {
+            style.backgroundColor = "rgb(205 205 205)";
+          } else {
+            isCorrect = true;
+            style.backgroundColor =
+              correctAnswers[question].answer === answers[question]
+                ? "#b1dab1"
+                : "#f7a8a8";
+          }
         }
+
+        let score;
+        if (isSettled) {
+          score = !isCorrect ? 0 : correctAnswers[question].value;
+        }
+
         return (
           <div
             key={question}
             className={styles.questionAndAnswer}
             style={style}
           >
-            <div className={styles.question}>{question}</div>
-            <div className={styles.answer}>{answers[question]}</div>
+            <div style={{ marginRight: "3rem" }}>
+              <div className={styles.question}>{question}</div>
+              <div className={styles.answer}>{answers[question]}</div>
+            </div>
+            <div style={{ marginLeft: "auto", fontSize: 22 }}>{score}</div>
           </div>
         );
       })}
