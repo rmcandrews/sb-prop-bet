@@ -25,16 +25,17 @@ const Entry = () => {
         const style = {};
         let isCorrect = false;
         let isSettled = false;
-        if (correctAnswers[question].answer) {
+        if (correctAnswers[question] && correctAnswers[question].answer) {
           isSettled = true;
           if (correctAnswers[question].answer === "PUSH") {
             style.backgroundColor = "rgb(205 205 205)";
           } else {
-            isCorrect = true;
-            style.backgroundColor =
-              correctAnswers[question].answer === answers[question]
-                ? "#b1dab1"
-                : "#f7a8a8";
+            if (correctAnswers[question].answer === answers[question]) {
+              isCorrect = true;
+              style.backgroundColor = "#b1dab1";
+            } else {
+              style.backgroundColor = "#f7a8a8";
+            }
           }
         }
 

@@ -64,12 +64,23 @@ const Leaderboard = () => {
       });
 
       const leader = superBowl.entries[0];
-      let questionsRemaining = 0;
-      Object.values(superBowl.answers).forEach((answer) => {
-        if (!answer.answer) questionsRemaining++;
-      });
       superBowl.entries.forEach((entry) => {
-        entry.isEliminated = leader.points - entry.points > questionsRemaining;
+        let possibleRemainingPoints = 0;
+        for (const [question, answer] of Object.entries(entry.answers)) {
+          if (!superBowl.answers[question].answer) {
+            possibleRemainingPoints += 0;
+            if (!answer.includes("(")) {
+              possibleRemainingPoints += 1;
+            } else {
+              possibleRemainingPoints += parseInt(
+                answer.split("(")[1].split(" ")[0]
+              );
+            }
+          }
+        }
+        console.log(possibleRemainingPoints);
+        entry.isEliminated =
+          leader.points - entry.points > possibleRemainingPoints;
       });
 
       let trackedEntry = await userPreferences
