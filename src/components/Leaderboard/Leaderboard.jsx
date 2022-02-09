@@ -126,6 +126,19 @@ const Leaderboard = () => {
 
   return (
     <div className={styles.leaderboardPage}>
+      <div style={{ backgroundColor: "white", padding: "1.25rem 1rem 1rem" }}>
+        <div style={{ fontSize: "2rem" }}>PROP BET POOL</div>
+        <div style={{ fontSize: "1rem", marginTop: 10 }}>
+          sponsored by{" "}
+          <a
+            href="https://www.bookiebeats.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            bookiebeats.com
+          </a>
+        </div>
+      </div>
       {trackedEntry && (
         <div className={styles.container}>
           <h2>YOU</h2>
