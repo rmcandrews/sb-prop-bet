@@ -140,40 +140,42 @@ const Leaderboard = () => {
         </div>
       </div>
       {trackedEntry && (
-        <div className={styles.container}>
+        <>
           <h2>YOU</h2>
-          <div
-            className={`${styles.item}${
-              trackedEntry.isEliminated ? ` ${styles.eliminated}` : ""
-            }`}
-            style={{ cursor: superBowl.hasStarted ? "pointer" : "" }}
-            onClick={() => {
-              handleEntryClick(trackedEntry);
-            }}
-          >
-            <div style={{ width: "1.75rem" }}>{trackedEntry.place}</div>
-            <div>
-              <Avatar
-                name={trackedEntry.name}
-                email={trackedEntry.email}
-                round
-                size="40"
-              />
-            </div>
-            <div className={styles.itemName}>
-              {trackedEntry.name}
-              {superBowl.hasStarted && (
-                <div className={styles.tiebreaker}>
-                  Tiebreaker: {trackedEntry.tiebreaker}
-                </div>
-              )}
-            </div>
-            <div className={styles.itemPoints}>
-              {trackedEntry.points}
-              {superBowl.hasStarted && <OpenIcon />}
+          <div className={styles.container}>
+            <div
+              className={`${styles.item}${
+                trackedEntry.isEliminated ? ` ${styles.eliminated}` : ""
+              }`}
+              style={{ cursor: superBowl.hasStarted ? "pointer" : "" }}
+              onClick={() => {
+                handleEntryClick(trackedEntry);
+              }}
+            >
+              <div style={{ width: "1.75rem" }}>{trackedEntry.place}</div>
+              <div>
+                <Avatar
+                  name={trackedEntry.name}
+                  email={trackedEntry.email}
+                  round
+                  size="40"
+                />
+              </div>
+              <div className={styles.itemName}>
+                {trackedEntry.name}
+                {superBowl.hasStarted && (
+                  <div className={styles.tiebreaker}>
+                    Tiebreaker: {trackedEntry.tiebreaker}
+                  </div>
+                )}
+              </div>
+              <div className={styles.itemPoints}>
+                {trackedEntry.points}
+                {superBowl.hasStarted && <OpenIcon />}
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
       <h2>LEADERBOARD</h2>
       <div className={styles.container}>
