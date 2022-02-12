@@ -67,7 +67,10 @@ const Leaderboard = () => {
       superBowl.entries.forEach((entry) => {
         let possibleRemainingPoints = 0;
         for (const [question, answer] of Object.entries(entry.answers)) {
-          if (!superBowl.answers[question].answer) {
+          if (
+            !superBowl.answers[question] ||
+            !superBowl.answers[question].answer
+          ) {
             possibleRemainingPoints += 0;
             if (!answer.includes("(")) {
               possibleRemainingPoints += 1;
