@@ -30,7 +30,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const initialize = async () => {
       const superBowl = await googleSheetsService.getSuperBowl({
-        year: "2022",
+        year: "2023",
       });
       superBowl.entries.forEach((entry) => {
         let points = 0;
